@@ -511,7 +511,10 @@ def laykey(message):
     string = f'GL-{user_id}+{TimeStamp()}'  
     hash_object = hashlib.sha256()
 hashlib.md5(string.encode())
-    key = str(hash_object.hexdigest())[:10]
+  def generate_key(hash_object):
+    key = str(hash_object.hexdigest())[:10]  # Đảm bảo indent đúng
+    return key
+
     print(key)
     
     url_key = requests.get(f'https://yeumoney.com/QL_api.php?token=eee97ade0e7401a23d12ce61158be94906f9f098c9b7f9c2599e50bb6a7ef5c3&format=json&url=https://jirayshop.xyz/key.php?r={key}').json()['shortenedUrl']
