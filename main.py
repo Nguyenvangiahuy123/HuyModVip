@@ -509,7 +509,7 @@ def laykey(message):
 
     user_id = message.from_user.id  
     string = f'GL-{user_id}+{TimeStamp()}'  
-    hash_object = 
+    hash_object = hashlib.sha256()
 hashlib.md5(string.encode())
     key = str(hash_object.hexdigest())[:10]
     print(key)
